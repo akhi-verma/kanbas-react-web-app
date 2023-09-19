@@ -1,0 +1,90 @@
+<select>
+    <option>Edit</option>
+    <option selected>Speed Grader</option>
+    <option>Duplicate</option>
+    <option>Delete</option>
+    <option>Mote To...</option>
+    <option>Send To...</option>
+    <option>Copy To...</option>
+    <option>Share to Commons</option>
+</select>
+
+<hr />
+
+<h3><label for="assignmentName">Assignment Name</label><br /></h3>
+<input 
+    value="A1 - ENV + HTML"
+    id="assignmentName" 
+    placeholder="Assignment Name" 
+/>
+
+<h3>Description</h3>
+<textarea cols="50" rows="5">
+This is the assignment description.
+</textarea>
+
+<h3>Points</h3>
+<input value="100" type="number" max="100" min="0" step="5"/>
+
+<h3>Assignment Group</h3>
+<select>
+    <option selected>ASSIGNMENTS</option>
+    <option>Placeholder Text 2</option>
+</select>
+
+<h3>Display Grade as</h3>
+<select>
+    <option selected>Percentage</option>
+    <option>Placeholder Text 2</option>
+</select>
+
+<h3>Submission Type</h3>
+<select>
+    <option selected>Online</option>
+    <option>Placeholder Text 2</option>
+</select>
+
+<h4>Online Entry Options</h4>
+<input type="checkbox" id="textEntry"/><label for="textEntry">Text Entry</label><br/>
+<input type="checkbox" id="WebsiteUrl"/><label for="WebsiteUrl">Website Url</label><br/>
+<input type="checkbox" id="MediaRecordings"/><label for="MediaRecordings">Media Recordings</label><br/>
+<input type="checkbox" id="StudentAnnotation"/><label for="StudentAnnotation">Student Annotation</label><br/>
+<input type="checkbox" id="FileUploads"/><label for="FileUploads">File Uploads</label><br/>
+
+<h3>Submission Attempts</h3>
+<select>
+    <option selected>Unlimited</option>
+    <option>Placeholder Text 2</option>
+</select>
+
+<h3>Plagiarism Review</h3>
+<select>
+    <option selected>None</option>
+    <option>Placeholder Text 2</option>
+</select>
+
+<h3>Group Assignment</h3>
+<input type="checkbox" id="groupAssignment"/><label for="groupAssignment">This is a group assignment</label><br/>
+
+<h3>Peer Reviews</h3>
+<input type="checkbox" id="peerReviews"/><label for="peerReviews">Require Peer Reviews</label><br/>
+
+<h3>Assign</h3>
+Assign to <br />
+<input value="Everyone" type="text"/>
+
+<h3>Due Date</h3>
+<input type="date" value="2023-01-01" />
+
+<h3>Available from</h3>
+<input type="date" value="2023-01-01" />
+
+<h3>Until</h3>
+<input type="date" value="2023-01-01" />
+
+<br />
+<br />
+
+<a class="btn" href="/Kanbas/Courses/Assignments/screen.html"><button>Cancel</button></a>
+<a class="btn" href="/Kanbas/Courses/Assignments/screen.html"><button>Save</button></a>
+

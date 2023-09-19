@@ -1,0 +1,154 @@
+<table width="100%">
+    <tr>
+        <td valign="top">
+            <ul>
+                <li><a href="/Kanbas/Account/Profile/screen.html">Account</a></li>
+                <li><a href="/Kanbas/Dashboard/screen.html">Dashboard</a></li>
+                <li><a href="/Kanbas/Courses/Home/screen.html">Courses</a></li>
+                <li><a href="/Kanbas/Calendar/screen.html">Calendar</a></li>
+                <li><a href="/Kanbas/Inbox/screen.html">Inbox</a></li>
+                <li><a href="/Kanbas/History/screen.html">History</a></li>
+                <li><a href="/Kanbas/Studio/screen.html">Studio</a></li>
+                <li><a href="/Kanbas/Comments/screen.html">Comments</a></li>
+                <li><a href="/Kanbas/Help/screen.html">Help</a></li>
+            </ul>
+        <td valign="top">
+            <ul>
+                <li><a href="/Kanbas/Courses/Home/screen.html">Home</a></li>
+                <li><a href="/Kanbas/Courses/Modules/index.html">Modules</a></li>
+                <li><a href="/Kanbas/Courses/Piazza/screen.html">Piazza</a></li>
+                <li><a href="/Kanbas/Courses/ZoomMeetings/screen.html">Zoom Meetings</a></li>
+                <li><a href="/Kanbas/Courses/Assignments/screen.html">Assignments</a></li>
+                <li><a href="/Kanbas/Courses/Quizzes/screen.html">Quizzes</a></li>
+                <li><a href="/Kanbas/Courses/Grades/screen.html">Grades</a></li>
+                <li><a href="/Kanbas/Courses/PanoptoVideo/screen.html">Panopto Video</a></li>
+                <li><a href="/Kanbas/Courses/Discussions/screen.html">Discussions</a></li>
+                <li><a href="/Kanbas/Courses/Announcements/screen.html">Announcements</a></li>
+                <li><a href="/Kanbas/Courses/Pages/screen.html">Pages</a></li>
+                <li><a href="/Kanbas/Courses/Files/screen.html">Files</a></li>
+                <li><a href="/Kanbas/Courses/Rubrics/screen.html">Rubrics</a></li>
+                <li><a href="/Kanbas/Courses/Outcomes/screen.html">Outcomes</a></li>
+                <li><a href="/Kanbas/Courses/Collaborations/screen.html">Collaborations</a></li>
+                <li><a href="/Kanbas/Courses/Syllabus/screen.html">Syllabus</a></li>
+                <li><a href="/Kanbas/Courses/Settings/screen.html">Settings</a></li>
+            </ul>
+        <td valign="top">
+                <h1>Course Details</h1>
+
+                <h2>Image</h2>
+                <input type="file" id="img" name="img">
+
+                <h2>Name</h2>
+                CS4550 12631 Web Development SEC 01 Fall 2023 (BOX-1-TR)
+
+                <h2>Course Code</h2>
+                CS4550.12631.202410
+
+                <h2>Blueprint Course</h2>
+                No
+
+                <h2>Course Template</h2>
+                <input type="checkbox" value="courseTemplate" name="check_courseTemplate" id="chkbox_courseTemplate"/>
+                <label for="chkbox_courseTemplate">Enable course as a Course Template</label> <br/>
+
+                <h2>Time Zone</h2>
+                <select name="timezone_offset" id="timezone-offset">
+                    <option value="-08:00">(GMT -8:00) Pacific Time (US &amp; Canada)</option>
+                    <option value="-07:00">(GMT -7:00) Mountain Time (US &amp; Canada)</option>
+                    <option value="-06:00">(GMT -6:00) Central Time (US &amp; Canada), Mexico City</option>
+                    <option value="-05:00" selected>(GMT -5:00) Eastern Time (US &amp; Canada), Bogota, Lima</option>
+                </select>
+
+                <h2>SIS ID</h2>
+                CS4550.12631.202410
+
+                <h2>Subaccount</h2>
+                CS Undergrad
+
+                <h2>Term</h2>
+                202410_1_Fall 2023 Semester Full Term
+
+                <h2>Participation</h2>
+                <select name="timezone_offset" id="timezone-offset">
+                    <option value="Term" selected>Term</option>
+                    <option value="PlaceholderValue2">Placeholder Value 2</option>
+                </select>
+                <br />
+                <br />
+                Course participation is limited to <b>term</b> start and end dates.
+
+                <h4>Start</h4>
+                <input type="date" value=""/>
+
+                <h4>Start</h4>
+                <input type="End" value=""/>
+
+                <br />
+                <br />
+
+                <input type="checkbox" id="startDate"/><label for="startDate">Restrict students from viewing course before term start date</label><br/>
+                <input type="checkbox" id="endDate"/><label for="endDate">Restrict students from viewing course after term end date</label><br/>
+
+                <h2>Participation</h2>
+                <select name="due_time" id="dueTime">
+                    <option value="11:59" selected>Account default (11:59 pm)</option>
+                    <option value="PV2">Placeholder Value 2</option>
+                </select>
+                <br />
+                <br />
+                This influencees the user interface for setting due dates. It does not change the time due for any existing assignments.
+
+                <h2>Language</h2>
+                <select name="due_time" id="dueTime">
+                    <option value="en-us" selected>Not set (user-configurable, default to English (United States))</option>
+                    <option value="PV2">Placeholder Value 2</option>
+                </select>
+
+                <h2>File Storage</h2>
+                10000 megabytes
+
+                <h2>Large Course</h2>
+                <input type="checkbox" id="largeCourse"/><label for="largeCourse">Launch SpeedGrader Filtered by Student Group</label><br/>
+
+                <h2>Grading Scheme</h2>
+                <input type="checkbox" id="largeCourse"/><label for="largeCourse">Enable course grading scheme</label><br/>
+
+                <h2>License</h2>
+                <select name="license" id="License">
+                    <option value="Private" selected>Private (Copyrighted)</option>
+                    <option value="Public">Public</option>
+                </select>
+
+                <h2>File Copyright</h2>
+                <input type="checkbox" id="fileCopyright"/><label for="fileCopyright">Copyright and license information must be provided for files before they are published.</label><br/>
+
+                <h2>Visibility</h2>
+                If you need to make your course public please contact your administrator/support.
+                <br />
+                <br />
+                <select name="license" id="License">
+                    <option value="Course" Disabled Selected>Course</option>
+                </select>
+                <br />
+                <br />
+                <input type="checkbox" id="Visibility"/><label for="Visibility">Include this course in the public course index</label><br/>
+
+                <h2>Format</h2>
+                <select name="format" id="courseformat">
+                    <option value="On-Campus" selected>On-Campus</option>
+                    <option value="Online">Online</option>
+                </select>
+
+                <h2>Mastery Paths</h2>
+                <input type="checkbox" id="masteryPaths"/><label for="masteryPaths">Enable individual learning paths for students based on assessment</label><br/>
+
+                <h2>Description</h2>
+                <textarea cols="50" rows="5">This is the assignment description.
+                </textarea>
+                <br />
+                <br />
+                <a class="btn" href="/Kanbas/Courses/Home/screen.html"><button>Update Course Details</button></a>
+
+        </td>
+    </tr>
+</table>
