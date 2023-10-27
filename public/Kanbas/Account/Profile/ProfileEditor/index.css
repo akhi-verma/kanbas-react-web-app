@@ -1,0 +1,156 @@
+.row {
+    margin-right: 0px;
+}
+
+ul.wd-kanbas-navigation {
+    border: none;    
+    list-style: none;
+    width: 80px;
+    border-radius: 0px;
+    background-color: black;
+}
+
+ul.wd-kanbas-navigation li{
+    border: none;    
+    list-style: none;
+    padding: 10px;
+    width: 80px;
+    text-align: center; 
+    font-size: 0.8em;
+    margin-bottom: 10px;
+    background-color: black;
+}
+
+ul.wd-kanbas-navigation li a {
+    color: white;
+    text-decoration: none;
+    font-size: 0.8em;
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+ul.wd-kanbas-profile-navigation {
+    border: none;    
+    list-style: none;
+    padding: 0px;
+    width: 200px;
+    border-radius: 0px;
+    background-color: white;
+}
+
+ul.wd-kanbas-profile-navigation li{
+    border: none;    
+    list-style: none;
+    padding: 5px;
+    width: 150px;
+    text-align: left; 
+    font-weight: 1.2em;
+    margin-left: 10px;
+    font-size: 1.2em;
+    margin-bottom: 15px;
+}
+
+ul.wd-kanbas-profile-navigation li a {
+    color: rgb(185, 1, 1);
+    text-decoration: none;
+    font-size: 0.8em;
+    text-align: center;
+}
+
+ul.wd-kanbas-navigation li.active {
+    color: red;
+    background-color: white;
+}
+
+ul.wd-kanbas-navigation li.active a {
+    color: red;
+    background-color: white;
+}
+
+ul.wd-kanbas-profile-navigation li.active a {
+    color: black;
+}
+
+ul.wd-kanbas-profile-navigation li.active {
+    background-color: white;
+    border-left: 1px solid black;
+    padding-left: 10px;
+}
+
+.wd-navbar-nav {
+    color: red;
+    padding-left: 10px;
+}
+.wd-profile-name {
+    color: black;
+    text-align: left;
+    padding-top: 10px;
+}
+
+.wd-profile-info a {
+    text-decoration: none;
+    color: red;
+}
+.wd-profile-btn {
+    text-align: right;  
+    margin-right: 10px;  
+}
+
+.wd-profile-btn a{
+    background-color: lightgray;
+    color: black;
+    text-decoration: none;
+    border: none;
+}
+
+#profile-name{
+    width: 30%;
+}
+
+#pronoun-dropdown{
+    width: 30%;
+}
+
+#profile-title {
+    width: 30%;
+}
+
+#biography{
+    width: 20%;
+}
+#link-title-header{
+    text-align: center;
+}
+#arrow{
+    text-align: center;
+    padding-top: 23px;
+}
+.wd-profile-links{
+    width: 50%;
+}
+
+.wd-profile-add-link-btn {
+    text-align: left;  
+}
+
+.wd-profile-add-link-btn a{
+    background-color: lightgray;
+    color: black;
+    text-decoration: none;
+    border: none;
+}
+
+.wd-profile-cancel-btn a{
+    background-color: lightgray;
+    color: black;
+    text-decoration: none;
+    border: none;
+    margin-right: 5px;
+}
+.wd-profile-save-btn a{
+    background-color: red;
+    color: black;
+    text-decoration: none;
+    border: none;
+    margin-left: 5px
+}

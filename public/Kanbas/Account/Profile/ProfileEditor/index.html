@@ -1,63 +1,138 @@
-<h2>Akhilesh Verma</h2>
-Name:* <input value="Akhilesh Verma" type="text"/> 
-Pronouns:
-<select>
-    <option selected>None</option>
-    <option>Mr</option>
-    <option>Mrs</option>
-</select>
-<br />
-<br />
-Title: <input type="text"/> 
+<html>
+<head>
+    <link href="/vendors/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="/vendors/fontawesome/css/fontawesome.min.css"  rel="stylesheet"/>
+    <link href="/vendors/fontawesome/css/solid.min.css"  rel="stylesheet"/>
+    <link href="/vendors/fontawesome/css/brands.min.css"  rel="stylesheet"/>
+    <link href="index.css" rel="stylesheet"/>
+<head>
+<body>
+    <div class="row">
+        <div class="col-auto">
+            <ul class="wd-kanbas-navigation list-group d-flex">
+                <li class="list-group-item"><img src="/Kanbas/images/NU.png" width="60" height="60"></li>
+                <li class="list-group-item active"><a href="/Kanbas/Account/Profile/screen.html"><i class="fa-solid fa-circle-user" style="color: grey; font-size: 2.5em"></i><br />Account</a></li>
+                <li class="list-group-item"><a href="/Kanbas/Dashboard/screen.html"><i class="fa-solid fa-gauge-high" style="color: Tomato; font-size: 2.5em"></i><br />Dashboard</a></li>
+                <li class="list-group-item"><a href="/Kanbas/Courses/Home/screen.html"><i class="fa-solid fa-book" style="color: Tomato; font-size: 2.5em"></i><br />Courses</a></li>
+                <li class="list-group-item"><a href="/Kanbas/Calendar/screen.html"><i class="fa-solid fa-calendar-days" style="color: Tomato; font-size: 2.5em"></i><br />Calendar</a></li>
+                <li class="list-group-item"><a href="/Kanbas/Inbox/screen.html"><i class="fa-solid fa-envelope-open-text" style="color: Tomato; font-size: 2.5em"></i><br />Inbox</a></li>
+                <li class="list-group-item"><a href="/Kanbas/History/screen.html"><i class="fa-regular fa-clock" style="color: Tomato; font-size: 2.5em"></i><br />History</a></li>
+                <li class="list-group-item"><a href="/Kanbas/Studio/screen.html"><i class="fa-solid fa-tv" style="color: Tomato; font-size: 2.5em"></i><br />Studio</a></li>
+                <li class="list-group-item"><a href="/Kanbas/Comments/screen.html"><i class="fa-brands fa-creative-commons" style="color: Tomato; font-size: 2.5em"></i><br />Commons</a></li>
+                <li class="list-group-item"><a href="/Kanbas/Help/screen.html"><i class="fa-regular fa-circle-question" style="color: Tomato; font-size: 2.5em"></i><br />Help</a></li>
+            </ul>
+        </div>
+        
+        <div class="col">
+            <div class="row">
+                <div class="row">
+                    <nav class="navbar col-auto">
+                        <button class="navbar-toggler wd-navbar-nav" type="button" aria-controls="navbarSupportedContent1" aria-expanded="false" aria-label="Toggle navigation"><span class="dark-blue-text">
+                            <i class="fas fa-bars fa-1x"></i></span></button>
+                    </nav>
+                    <div class="col wd-profile-name ">
+                        Akhilesh Verma's Profile
+                    </div>
+                </div>
+            </div>
+            <hr />
+            <div class="row wd-kanbas-profile-navigation">
+                <div class="col-auto">
+                    <ul class="wd-kanbas-profile-navigation list-group d-flex">
+                        <li class="list-group-item"><a href="/Kanbas/Account/Profile/Notifications">Notifications</a></li>
+                        <li class="list-group-item active"><a href="/Kanbas/Account/Profile/screen.html">Profile</a></li>
+                        <li class="list-group-item"><a href="/Kanbas/Account/Profile/Files">Files</a></li>
+                        <li class="list-group-item"><a href="/Kanbas/Account/Profile/Settings">Settings</a></li>
+                        <li class="list-group-item"><a href="/Kanbas/Account/Profile/ePortfolios">ePortfolios</a></li>
+                        <li class="list-group-item"><a href="/Kanbas/Account/Profile/Shared Content">Shared Content</a></li>
+                        <li class="list-group-item"><a href="/Kanbas/Account/Profile/The Hub">The Hub</a></li>
+                        <li class="list-group-item"><a href="/Kanbas/Account/Profile/Qwickly Course Tools">Qwickly Course Tools</a></li>
+                        <li class="list-group-item"><a href="/Kanbas/Account/Profile/Global Announcements">Global Announcements</a></li>
+                    </ul>
+                </div>
+                <div class="col wd-profile-info">
+                    <div class="row">
+                        <div class="col">
+                            <div class="row">
+                                <div class="col">
+                                    <a href="/Kanbas/Account/Profile/screen.html"><i class="fa-solid fa-circle-user" style="color: grey; font-size: 10em"></i><br /></a>
+                                    <br />
+                                    <h3>Name:*</h3>
+                                    <div class="mb-3">
+                                        <label for="profile-name" class="form-label"></label>
+                                        <input type="text" id="profile-name" class="form-control" title="Enter your name" placeholder="Akhilesh verma" value="Akhilesh Verma">
+                                    </div>    
+                                    <h3>Pronouns:</h3>
+                                    <div class="mb-3" id="pronoun-dropdown">
+                                        <select class="form-select">
+                                            <option selected>None</option>
+                                            <option value="Mr">Mr</option>
+                                            <option value="Mrs">Mrs</option>
+                                         </select>                                         
+                                    </div>    
+                                    <h3>Title:</h3>
+                                    <div class="mb-3">
+                                        <label for="profile-title" class="form-label"></label>
+                                        <input type="text" class="form-control" title="Enter your title" id="profile-title" placeholder="">
+                                    </div>                                                                        
+                                </div>
+                                <div class="col wd-profile-btn">
+                                    <a href="/Kanbas/Account/Profile/screen.html" class="btn btn-primary btn-m"><i class="fa fa-pencil" aria-hidden="true"></i> Cancel Editing</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br />
+                    <div class="row">
+                        <h3>Contact</h3>
+                        <p>No registered services, you can add some on the <a href="/Kanbas/Account/Profile/Settings">settings</a> page. </p>
+                    </div>
+                    <div class="row">
+                        <h3><br />Biography</h3>
+                        <div class="mb-3">
+                            <label for="biography" class="form-label"> </label>
+                            <textarea class="form-control" type="text" id="biography" rows="3" >Student, Cybersecurity Analyst</textarea>
+                        </div>                          
+                    </div>
+                    <div class="row wd-profile-links">
+                        <h3><br />Links</h3>
+                        <div class="col">
+                            <div class="row">
+                                <h5 id = "link-title-header">Title</h5>
+                            </div>
+                            <div class="mb-3">
+                                <label for="link-title" class="form-label"></label>
+                                <input type="text" class="form-control" id="link-title" placeholder="" value="YouTube">
+                            </div>
+                            <div class="col wd-profile-add-link-btn">
+                                <a href="#" class="btn btn-primary btn-m">Add another link</a>
+                            </div>
+                        </div>
+                        <div class="col-auto" id="arrow">
+                            <div class="row">
+                                <p id="arrow">&#10141;</p>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="row">
+                                <h5 id = "link-title-header">URL</h5>
+                            </div>
+                            <div class="mb-3">
+                                <label for="link-URL" class="form-label"></label>
+                                <input type="text" class="form-control" id="link-URL" placeholder="" value="https://youtu.be/_Hq9n7cc8rk">
+                            </div>
+                            <br />
+                            <div class="float-end wd-profile-save-btn">
+                                <a href="/Kanbas/Account/Profile/screen.html" class="btn btn-primary btn-m">Save</a>
+                            </div>
+                            <div class="float-end wd-profile-cancel-btn">
+                                    <a href="/Kanbas/Account/Profile/screen.html" class="btn btn-primary btn-m">Cancel Editing</a>
+                            </div>       
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </div>
+</body>
+</html>
 
-<h3>Contact</h3>
-No registered services, you can add some on the <a href="#">settings</a> page.
-
-<h3>Biography</h3>
-Student, Cybersecurity Analyst<br />
-<textarea cols="50" rows="5">
-Student, Cybersecurity Analyst</textarea>
-
-<h3>Links</h3>
-    <ul>
-        <li>
-            <a href="#">LinkedIn</a> <a href="#">Links to an external site.</a> 
-        </li>
-    </ul>
-
-    <table>
-        <thead>
-            <tr>
-                <th>
-                    Title
-                </th>
-                <th></th>
-                <th>
-                    URL
-                </th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>
-                    <input value="YouTube" type="text"/> 
-                </td>
-                <td>
-                    &rarr;
-                </td>
-                <td>
-                    <input value="https://youtube.com" type="text"/> 
-                </td>
-                <td>
-                    <a href="#">Remove</a>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-<a class="btn" href="#"><button>Add another link</button></a>
-<br />
-<a class="btn" href="#"><button>Cancel</button></a>
-<a class="btn" href="#"><button>Save Profile</button></a>
-<br />
-<a class="btn" href="#"><button>Edit Profile</button></a>
-<a class="btn" href="#"><button>Cancel Editing</button></a>

@@ -1,0 +1,25 @@
+ul.wd-kanbas-course-navigation {
+    border: none;    
+    list-style: none;
+    padding: 0px;
+    width: 150px;
+    border-radius: 0px;
+    background-color: white;
+}
+
+ul.wd-kanbas-course-navigation li{
+    border: none;    
+    list-style: none;
+    padding: 10px;
+    width: 150px;
+    text-align: center; 
+    font-weight: 1.2em;
+}
+
+ul.wd-kanbas-course-navigation li a {
+    color: rgb(185, 1, 1);
+    text-decoration: none;
+    font-size: 0.8em;
+    text-align: center;
+    padding-bottom: 10px;
+}
