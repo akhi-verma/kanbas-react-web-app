@@ -1,0 +1,65 @@
+.row {
+    margin-right: 0px;
+}
+
+.wd-breadcrumb a {
+    color: rgb(185, 1, 1);
+    text-decoration: none;
+}
+
+.wd-breadcrumb {
+    color: black;
+    text-align: left;
+    padding-top: 10px;
+}
+.wd-breadcrumb a {
+    color: rgb(185, 1, 1);
+    text-decoration: none;
+}
+
+.wd-btns{
+    height: 40px;
+    margin-left: 2px;
+    margin-bottom: 10px;
+}
+.fa-circle-check {
+    color: green;
+    text-align: center;
+}
+
+
+.wd-module-links > .list-group > .list-group-item {
+    margin-top: 20px;
+}
+.wd-module-links li a {
+    color: rgb(185, 1, 1);
+    text-decoration: none;
+}
+
+.wd-right-sidebar-btn a {
+    text-align: left;  
+}
+
+
+.wd-publish-circle-check {
+    text-align: center;
+    color: white;
+}
+
+.wd-float-done {
+    clear: both;
+ }
+ 
+
+
+
+
+/*
+For debugging purposes, you can use the following CSS snippet to outline all elements on the page.
+This was used since bootstrap row adds padding on the right automatically.
+*/
+/*
+*{
+    outline: 1px solid #f00 !important;
+  }
+*/

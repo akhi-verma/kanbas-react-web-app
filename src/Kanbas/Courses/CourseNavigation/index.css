@@ -1,0 +1,52 @@
+.wd-kanbas-course-navigation {
+    width:200px;
+}
+
+ul.wd-kanbas-course-navigation {
+    border: none;    
+    list-style: none;
+    padding: 0px;
+    width: 200px;
+    border-radius: 0px;
+    background-color: white;
+}
+
+ul.wd-kanbas-course-navigation li{
+    border: none;    
+    list-style: none;
+    padding: 5px;
+    width: 150px;
+    text-align: left; 
+    font-weight: 1.2em;
+    margin-left: 10px;
+    font-size: 1.2em;
+    margin-bottom: 15px;
+}
+
+ul.wd-kanbas-course-navigation li a {
+    color: rgb(185, 1, 1);
+    text-decoration: none;
+    font-size: 0.8em;
+    text-align: center;
+}
+
+ul.wd-kanbas-navigation li.active {
+    color: red;
+    background-color: white;
+}
+
+ul.wd-kanbas-navigation li.active a {
+    color: red;
+    background-color: white;
+}
+
+
+ul.wd-kanbas-course-navigation li.active a {
+    color: black;
+}
+
+ul.wd-kanbas-course-navigation li.active {
+    background-color: white;
+    border-left: 1px solid black;
+    padding-left: 10px;
+}
