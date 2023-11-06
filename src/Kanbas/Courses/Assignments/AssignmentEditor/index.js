@@ -1,13 +1,18 @@
 import React from "react";
 import { useNavigate, useParams, Link } from "react-router-dom";
 import db from "../../../Database";
-
+import { useSelector, useDispatch } from "react-redux";
+import {
+  addAssignment,
+  deleteAssignment,
+  updateAssignment,
+  setAssignment,
+} from "../assignmentReducer";
 
 function AssignmentEditor() {
   const { assignmentId } = useParams();
-  const assignment = db.assignments.find(
-    (assignment) => assignment._id === assignmentId);
-
+  //const assignment = db.assignments.find(
+  //  (assignment) => assignment._id === assignmentId);
 
   const { courseId } = useParams();
   const navigate = useNavigate();
@@ -15,6 +20,10 @@ function AssignmentEditor() {
     console.log("Actually saving assignment TBD in later assignments");
     navigate(`/Kanbas/Courses/${courseId}/Assignments`);
   };
+  const courseAssignments = useSelector((state) => state.assignmentReducer.assignments.filter(
+    (assignment) => assignment.course === courseId));
+  const assignment = useSelector((state) => state.assignmentReducer.assignment);
+  const dispatch = useDispatch();
   return (
     <div className="col-sm-11">
       <div className="row">
@@ -37,8 +46,14 @@ function AssignmentEditor() {
                 Assignment Name
       </label>
       <input value={assignment.title} id="assignmentName"
+            onChange={(e) =>
+                dispatch(setAssignment({ ...assignment, title: e.target.value }))
+            }
              className="form-control mb-2" />
         <textarea id="assignmentDescription"
+            onChange={(e) =>
+                dispatch(setAssignment({ ...assignment, description: e.target.value }))
+            }
                     className="form-control mb-2"
                     value="This is a placeholder text for this assignment."
                     rows="3">
@@ -179,9 +194,15 @@ function AssignmentEditor() {
             className="btn btn-danger float-end">
         Cancel
       </Link>
-      <button onClick={handleSave} className="btn btn-success me-2 float-end">
+      <button
+        onClick={() => {
+            dispatch(updateAssignment(assignment));
+            navigate(`/Kanbas/Courses/${courseId}/Assignments`);
+        }}
+        className="btn btn-success me-2 float-end"
+        >
         Save
-      </button>
+        </button>
     </div>
   );
 }

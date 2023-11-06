@@ -1,14 +1,25 @@
 import React from "react";
-import { Link, useParams } from "react-router-dom";
+import { useNavigate, Link, useParams } from "react-router-dom";
 import db from "../../Database";
 import "./index.css"
-
+import { useSelector, useDispatch } from "react-redux";
+import {
+  addAssignment,
+  deleteAssignment,
+  updateAssignment,
+  setAssignment,
+} from "./assignmentReducer";
 
 function Assignments() {
   const { courseId } = useParams();
-  const assignments = db.assignments;
-  const courseAssignments = assignments.filter(
-    (assignment) => assignment.course === courseId);
+  const navigate = useNavigate();
+  //const assignments = db.assignments;
+  //const courseAssignments = assignments.filter(
+  //  (assignment) => assignment.course === courseId);
+  const courseAssignments = useSelector((state) => state.assignmentReducer.assignments.filter(
+      (assignment) => assignment.course === courseId));
+  const assignment = useSelector((state) => state.assignmentReducer.assignment);
+  const dispatch = useDispatch();
   return (
       <div>
         <h2>Assignments for course {courseId}</h2>
@@ -24,7 +35,15 @@ function Assignments() {
                 <a href="#" class="btn btn-secondary btn-m wd-btns"><i class="fa fa-ellipsis-v pt-1" aria-hidden="true"></i></a>
             </div>
             <div class="float-end">
-                <a href="#" class="btn btn-danger btn-m wd-btns"><i class="fa fa-plus" aria-hidden="true"></i> Assignment</a>
+                <button
+                onClick={() => {
+                    dispatch(addAssignment(assignment));
+                    navigate(`/Kanbas/Courses/${courseId}/Assignments/${assignment._id}`);
+                }}
+                className="btn btn-danger me-2 float-end btn-m wd-btns" 
+                > <i class="fa fa-plus" aria-hidden="true"></i> 
+                Assignment
+                </button>
             </div>   
             <div class="float-end">
                 <a href="#" class="btn btn-secondary btn-m wd-btns"><i class="fa fa-plus" aria-hidden="true"></i> Group</a>
@@ -37,13 +56,22 @@ function Assignments() {
             <li className="list-group-item list-group-item-secondary">
                 <h4>Assignments</h4>
             </li>
-        {courseAssignments.map((assignment) => (
-          <Link
-            key={assignment._id}
-            to={`/Kanbas/Courses/${courseId}/Assignments/${assignment._id}`}
-            className="list-group-item">
+        {courseAssignments.map((assignment)  => (
+          <li key={assignment._id} className="list-group-item d-flex justify-content-between align-items-center">
+          <Link to={`/Kanbas/Courses/${courseId}/Assignments/${assignment._id}`}
+            onClick={() => dispatch(setAssignment(assignment))}
+            className="list-group-item border-0">
             {assignment.title}
           </Link>
+          <button className="btn btn-danger my-2 float-end"
+            onClick={() => {
+              if (window.confirm('Are you sure you want to remove this assignment?')){
+                dispatch(deleteAssignment(assignment._id));
+              }
+            }}>
+            Delete
+          </button>
+          </li>
         ))}
         </ul>
       </div>
