@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate, Link, useParams } from "react-router-dom";
 import db from "../../Database";
 import "./index.css"
@@ -8,16 +8,26 @@ import {
   deleteAssignment,
   updateAssignment,
   setAssignment,
+  setAssignments
 } from "./assignmentReducer";
+import * as client from "./client";
 
 function Assignments() {
   const { courseId } = useParams();
+  useEffect(() => {
+    client.findAssignmentsForCourse(courseId)
+      .then((assignments) =>
+        dispatch(setAssignments(assignments))
+    );
+  }, [courseId]);
+  //console.log(setAssignments(assignments));
   const navigate = useNavigate();
   //const assignments = db.assignments;
   //const courseAssignments = assignments.filter(
   //  (assignment) => assignment.course === courseId);
-  const courseAssignments = useSelector((state) => state.assignmentReducer.assignments.filter(
-      (assignment) => assignment.course === courseId));
+  //const courseAssignments = useSelector((state) => state.assignmentReducer.assignments.filter(
+  //    (assignment) => assignment.course === courseId));
+  const courseAssignments = useSelector((state) => state.assignmentReducer.assignments);
   const assignment = useSelector((state) => state.assignmentReducer.assignment);
   const dispatch = useDispatch();
   return (

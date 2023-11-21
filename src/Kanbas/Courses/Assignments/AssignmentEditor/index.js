@@ -8,6 +8,7 @@ import {
   updateAssignment,
   setAssignment,
 } from "../assignmentReducer";
+import * as client from "../client";
 
 function AssignmentEditor() {
   const { assignmentId } = useParams();
@@ -20,6 +21,12 @@ function AssignmentEditor() {
     console.log("Actually saving assignment TBD in later assignments");
     navigate(`/Kanbas/Courses/${courseId}/Assignments`);
   };
+  const handleAddAssignment = () => {
+    client.createAssignment(assignmentId, assignment).then((assignment) => {
+      dispatch(addAssignment(assignment));
+    });
+  };
+
   const courseAssignments = useSelector((state) => state.assignmentReducer.assignments.filter(
     (assignment) => assignment.course === courseId));
   const assignment = useSelector((state) => state.assignmentReducer.assignment);
@@ -55,7 +62,7 @@ function AssignmentEditor() {
                 dispatch(setAssignment({ ...assignment, description: e.target.value }))
             }
                     className="form-control mb-2"
-                    value="This is a placeholder text for this assignment."
+                    defaultValue="This is a placeholder text for this assignment."
                     rows="3">
         </textarea>
         <div className="row justify-content-center mb-3">
@@ -196,7 +203,15 @@ function AssignmentEditor() {
       </Link>
       <button
         onClick={() => {
-            dispatch(updateAssignment(assignment));
+            const assignmentExists = courseAssignments.some(
+                (assignment) => assignment._id === assignmentId
+              );
+              if (assignmentExists) {
+                dispatch(updateAssignment(assignment));
+              } else {
+                {handleAddAssignment()};
+              }
+            //dispatch(updateAssignment(assignment));
             navigate(`/Kanbas/Courses/${courseId}/Assignments`);
         }}
         className="btn btn-success me-2 float-end"
