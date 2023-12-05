@@ -5,6 +5,8 @@ function KanbasNavigationSidebar() {
   const links = 
   [
     { name: "Account", icon: <i className={'fas fa-circle-user'} style={{fontSize: 2.5 + 'em'}} > </i> },
+    { name: "Signin", icon: <i className={'fas fa-circle-user'} style={{fontSize: 2.5 + 'em'}} > </i> },
+    { name: "Signup", icon: <i className={'fas fa-circle-user'} style={{fontSize: 2.5 + 'em'}} > </i> },
     { name: "Dashboard", icon: <i className={'fas fa-gauge-high'} style={{fontSize: 2.5 + 'em'}} > </i> },
     { name: "Courses", icon: <i className={'fas fa-book'} style={{fontSize: 2.5 + 'em'}} > </i> },
     { name: "Calendar", icon: <i className={'fas fa-calendar-days'} style={{fontSize: 2.5 + 'em'}} > </i> },

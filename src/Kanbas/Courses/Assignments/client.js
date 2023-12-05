@@ -2,8 +2,8 @@ import axios from "axios";
 //const COURSES_URL = "http://localhost:4000/api/courses";
 //const ASSIGNMENTS_URL = "http://localhost:4000/api/assignments";
 
-const COURSES_URL = "https://kanbas-node-server-app-l3yv.onrender.com/api/courses";
-const ASSIGNMENTS_URL = "https://kanbas-node-server-app-l3yv.onrender.com/api/assignments";
+const COURSES_URL = "https://kanbas-node-server-app-a6-mtju.onrender.com/api/courses";
+const ASSIGNMENTS_URL = "https://kanbas-node-server-app-a6-mtju.onrender.com/api/assignments";
 
 export const createAssignment = async (courseId, assignment) => {
     const response = await axios.post(
