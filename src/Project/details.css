@@ -1,0 +1,23 @@
+.container-fluid {
+  background-color: #121212; /* Dark background color */
+  color: #ffffff; /* Light text color for better readability */
+  padding: 20px; /* Add some padding to the container */
+
+  /* Add rounded corners and box shadow for a modern look */
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1); /* Adjust the shadow color and intensity as needed */
+}
+
+.row {
+    margin-right: 0px;
+}
+
+.liked-by {
+    max-height: 200px;
+    overflow: auto;
+}
+
+.liked-by a {
+    text-decoration: none;
+    color: rgb(74, 244, 230);
+}

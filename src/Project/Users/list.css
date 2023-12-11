@@ -1,0 +1,8 @@
+.heading-text > tr > th{
+    background-color: lightgrey;
+    color: black;
+}
+
+.admin-row {
+    background-color: yellow;
+}

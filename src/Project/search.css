@@ -1,0 +1,28 @@
+/* Search.css */
+
+/* Header */
+h1 {
+    color: #ff4081; /* Pink */
+  }
+  
+  /* Input Group */
+  .input-group input {
+    background-color: lightblue; /* Light Pink */
+    color: #000; /* Black */
+  }
+  
+  .input-group button {
+    background-color: green; /* Blue */
+  }
+  
+  /* Results Header */
+  h2 {
+    color: #4caf50; /* Green */
+  }
+
+  .row {
+    margin-right: 0px;
+}
+
+  
+ 
