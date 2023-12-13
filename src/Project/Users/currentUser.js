@@ -1,0 +1,22 @@
+import * as client from "./client";
+import { useState, useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { setCurrentUser } from "./reducer";
+
+function CurrentUser({children}) {
+    const [loading, setLoading] = useState(true);
+    const dispatch = useDispatch();
+    const fetchCurrentUser = async () => {
+            const user = await client.account();
+            setCurrentUser(user);
+            dispatch(setCurrentUser(user));
+            setLoading(false);
+    }
+
+    useEffect(() => {
+        fetchCurrentUser();
+      }, [])
+      return <>{!loading && children}</>
+}   
+
+export default CurrentUser;

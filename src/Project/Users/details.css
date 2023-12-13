@@ -2,3 +2,33 @@
     text-decoration: none;
     color: black;
 }
+
+.edit-button a {
+    border: none;
+    color: black;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.heading h2 {
+    color: cyan; /* Change this to your desired heading color */
+}
+
+.profile-container {
+    background-color: #2d2c2c; /* Change this to your desired background color */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.profile-container li {
+    background-color: rgb(254, 207, 21)!important;
+}
+
+.profile-container li a{
+    color: black;
+    text-decoration: none;
+    
+}

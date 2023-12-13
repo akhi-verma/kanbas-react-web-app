@@ -1,7 +1,11 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import * as client from "./client";
+import "./signup.css";
+import { useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 
+  
 function Signup() {
   const [error, setError] = useState("");
   const [credentials, setCredentials] = useState({
@@ -15,13 +19,16 @@ function Signup() {
       setError(err.response.data.message);
     }
   };
+  const dispatch = useDispatch();
   return (
     <div className="container mt-5 my-4 signup-container">
-      <h1 className="text-center mb-4 text-warning">Signup</h1>
+      <h2 className="mb-4">Sign up</h2>
       {error && <div className="alert alert-danger">{error}</div>}
-      <div className="mb-3">
+      <div className="form-group">
+      <label htmlFor="signup-username">Username</label>
         <input
-          className="form-control"
+          id="signup-username"
+          className="form-control my-3 border-warning text-dark wd-placeholder-color"
           placeholder="Username"
           value={credentials.username}
           onChange={(e) => setCredentials({
@@ -29,9 +36,11 @@ function Signup() {
             username: e.target.value })}
         />
       </div>
-      <div className="mb-3">
+      <div className="form-group">
+      <label htmlFor="signup-password">Password</label>
         <input
-          className="form-control"
+          id="signup-password"
+          className="form-control my-3 border-warning text-dark wd-placeholder-color"
           type="password"
           placeholder="Password"
           value={credentials.password}
@@ -40,8 +49,8 @@ function Signup() {
             password: e.target.value })}
         />
       </div>
-      <button className="btn btn-primary" onClick={signup}>
-        Signup
+      <button className="btn my-3 wd-signup-btn btn-warning" onClick={signup}>
+        Sign up
       </button>
     </div>
   );

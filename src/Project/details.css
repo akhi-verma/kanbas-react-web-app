@@ -1,16 +1,16 @@
-.container-fluid {
-  background-color: #121212; /* Dark background color */
-  color: #ffffff; /* Light text color for better readability */
-  padding: 20px; /* Add some padding to the container */
-
-  /* Add rounded corners and box shadow for a modern look */
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1); /* Adjust the shadow color and intensity as needed */
-}
-
 .row {
     margin-right: 0px;
 }
+
+.top-container-fluid {
+    padding-top: 20px; /* Add some padding to the container */
+    padding-left: 0px;
+    height: 100vh!important; /* Full-height: remove this if you want "auto" height */
+    /* Add rounded corners and box shadow for a modern look */
+    overflow: auto;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1); /* Adjust the shadow color and intensity as needed */
+}
+
 
 .liked-by {
     max-height: 200px;
@@ -21,3 +21,61 @@
     text-decoration: none;
     color: rgb(74, 244, 230);
 }
+
+.star-label {
+    display: inline-block;
+    margin-right: 5px;
+  }
+  
+  .star {
+    font-size: 30px;
+    color: gray; /* Gold color for the star */
+    cursor: pointer;
+  }
+  
+  .star:hover {
+    color: #ffcc00; /* Slightly darker gold on hover */
+  }
+  
+  /* Hide the radio button */
+  input[type="radio"] {
+    display: none;
+  }
+  
+  /* Show the star when radio button is checked */
+  input[type="radio"]:checked + .star {
+    color: #ffd700;
+  }
+
+  .review-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+  }
+  
+  .review-author {
+    font-weight: bold;
+    text-decoration: none;
+    color: #ffd700; /* Gold color for the username */
+  }
+  
+  .review-rating {
+    color: #ffd700; /* Gold color for the rating */
+  }
+  
+  .review-text {
+    margin-bottom: 10px;
+  }
+  
+  .list-group-item:hover {
+    background-color: #333; /* Darken the background on hover */
+  }
+
+  .average-rating {
+    display: flex;
+    align-items: center;
+  }
+  
+  .numeric-rating {
+    margin-left: 5px; /* Add some space between stars and numeric value */
+  }

@@ -18,7 +18,7 @@ export const createLike = async (userId, movieId, movieTitle) => {
     return response.data;
     }
 export const deleteLike = async (userId, movieId) => {
-    const response = await request.delete(`${LIKES_API_URL}/${userId}`);
+    const response = await request.delete(`${USERS_API_URL}/${userId}/likes/${movieId}`);
     return response.data;
     }
 export const findUsersLikeMovies = async (movieId) => {

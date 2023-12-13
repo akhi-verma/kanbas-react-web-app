@@ -3,6 +3,9 @@
 }
 
 .container-fluid {
-    padding-right: 0px;
+    padding-top: 20px; /* Add some padding to the container */
     padding-left: 0px;
-}   
+    height: 100vh; /* Full-height: remove this if you want "auto" height */
+    /* Add rounded corners and box shadow for a modern look */
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1); /* Adjust the shadow color and intensity as needed */
+}

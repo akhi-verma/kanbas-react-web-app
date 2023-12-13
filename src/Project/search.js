@@ -22,11 +22,11 @@ function Search() {
     if (search && year) {
       fetchMovies(search, year);
     }
-  }, [search, year]);
+  }, [search, year, results]);
 
   return (
     <div className="container bg-dark text-light p-4">
-      <h1 className="text-primary mt-4 mb-3">Movie Search</h1>
+      <h1 className="mt-4 mb-3 heading">Movie Search</h1>
       <div className="input-group mb-3">
         <input 
           type="text" 
@@ -48,6 +48,7 @@ function Search() {
             type="button" 
             onClick={() => Navigate(`/Project/search/${searchTerm}/${searchYear}`)}
           >
+            <i class="fa-solid fa-film mx-2"></i>
             Search
           </button>
         </div>
@@ -62,7 +63,7 @@ function Search() {
                 <br />
                 <strong className="text-light">Year: {search.Year}</strong>
               </div>
-              <img src={search.Poster} alt={search.Title} className="img-thumbnail" style={{ width: '100px', height: '150px' }} />
+              <img src={search.Poster} alt={search.Title} className="img-thumbnail" style={{ width: '150px', height: '200px' }} />
             </li>
           </Link>
         ))}

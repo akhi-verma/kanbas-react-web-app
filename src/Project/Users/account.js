@@ -4,11 +4,15 @@ import * as client from "./client";
 import { Link, useNavigate } from "react-router-dom";
 import "../index.css";
 import "./details.css";
+import { useDispatch } from "react-redux";
+import { setCurrentUser } from "./reducer";
+import "./account.css";
 
 function Account() {
   const [user, setUser] = useState(null);
   const navigate = useNavigate();
   const { id } = useParams();
+  const dispatch = useDispatch();
   const fetchAccount = async () => {
     try{
         const user = await client.account();
@@ -23,6 +27,7 @@ function Account() {
   }
   const signout = async () => {
     await client.signout();
+    dispatch(setCurrentUser(null));
     navigate("/Project/signin");
   };
 
@@ -31,10 +36,10 @@ function Account() {
   }, []);
   return(
   <div>
-    <h1>Account</h1>
+    <h1 className="heading mt-5 my-4" >Account Information</h1>
     {user && (
-        <div>
-            <div className="row mb-4">
+        <div className="container account-container mx-0">
+            <div className="row mb-4 mt-2">
                 <div className="col-sm-2">
                     <label htmlFor="username" className="text-info font-weight-bold">Username:</label>
                 </div>
@@ -70,7 +75,7 @@ function Account() {
                     <input
                     type="text"
                     id="Email"
-                    className="form-control"
+                    className="form-control border-warning"
                     value={user.email}
                     onChange={(e) => setUser({ ...user, email: e.target.value })}
                     />
@@ -104,19 +109,21 @@ function Account() {
                     />
                 </div>
             </div>
-            <button className="btn btn-primary mb-4" 
+            <button className="btn btn-primary border-dark" 
               onClick={updateUser}>Update
             </button>
-            <button className="btn btn-danger mb-4" 
+            <button className="btn btn-danger mx-4 border-dark" 
               onClick={signout}>Signout
             </button>
             {
                 user.role === "ADMIN" && (
-                    <div>
-                        <Link to="/Project/users" className="btn btn-warning">Users</Link>
+                    <div className="float-start wd-manage-users">
+                        <Link to="/Project/users" className="btn btn-warning">Manage Users</Link>
                     </div>
                 )
             }
+            <Link to={`/Project/users/${user._id}`} className="btn btn-info float-end">View Profile</Link>
+
         </div>
     )}
     

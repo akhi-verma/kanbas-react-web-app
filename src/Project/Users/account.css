@@ -1,0 +1,51 @@
+    /* Add this CSS to your stylesheet */
+
+    /* Style for labels */
+    .text-info.font-weight-bold {
+    color: #17a2b8; /* Text color */
+    }
+
+    /* Style for input fields */
+    .form-control {
+    background-color: #343a40; /* Input background color */
+    color: #ffffff; /* Input text color */
+    border-color: #17a2b8; /* Border color */
+    }
+
+    /* Style for buttons */
+    .btn-primary {
+    background-color: coral !important; /* Primary button background color */
+    color: black !important; /* Primary button text color */
+    }
+
+    .btn-danger {
+    background-color: darkred; /* Danger button background color */
+    color: #ffffff; /* Danger button text color */
+    }
+
+
+    /* Style for the container */
+
+    /* Style for the link inside the admin section */
+
+    /* Hover effect for buttons */
+
+
+    .heading {
+    color: #17a2b8;
+    }
+
+    .account-container h2 {
+    color: cyan; /* Change this to your desired heading color */
+    }
+    
+    .account-container {
+        background-color: #2d2c2c; /* Change this to your desired background color */
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .wd-manage-users {
+        margin-right: 1.5em; 
+    }

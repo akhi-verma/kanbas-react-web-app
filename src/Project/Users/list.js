@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import "./list.css";
 import { BsFillCheckCircleFill, BsPencil, BsPlusCircleFill }
   from "react-icons/bs";
+import "./list.css"
 
 function UserList() {
   const [users, setUsers] = useState([]);
@@ -70,8 +71,8 @@ function UserList() {
       {
         currentUser && currentUser.role === "ADMIN" && (
         <>
-          <h2>Users</h2>
-          <table className="table table-striped table-hover table-dark">
+          <h2 className='heading mt-5'>User Management</h2>
+          <table className="table table-striped table-hover table-dark my-5">
             <thead className="thead heading-text">
               <tr>
                 <th>Username</th>
@@ -79,6 +80,7 @@ function UserList() {
                 <th>Last Name</th>
                 <th>Role</th>
                 <th>Edit</th>
+                <th>Delete</th>
               </tr>
             </thead>
             <tbody>
@@ -108,66 +110,69 @@ function UserList() {
               ))}
             </tbody>
           </table>
-          <h2>User settings</h2>
+          <h2 className='heading'>Update User Information</h2>
           {error && <div className="alert alert-danger">{error}</div>}
-          <div className="form-group col-sm-3">
-            <label htmlFor="password">Password</label>
-            <input
-              type="password"
-              className="form-control"
-              id="password"
-              value={credentials.password}
-              placeholder='Password'
-              onChange={(e) => setCredentials({ ...credentials, password: e.target.value })}
+          <div lassName="container list-container mx-0">
+            <div className="form-group col-sm-3 py-1">
+              <label htmlFor="password">Password</label>
+              <input
+                type="password"
+                className="form-control"
+                id="password"
+                value={credentials.password}
+                placeholder='Password'
+                onChange={(e) => setCredentials({ ...credentials, password: e.target.value })}
+                />
+            </div>
+
+            <div className="form-group col-sm-3 py-1">
+              <label htmlFor="username">Username</label>
+              <input
+                type="text"
+                className="form-control"
+                id="username"
+                value={credentials.username}
+                placeholder='Username'
+                onChange={(e) => setCredentials({ ...credentials, username: e.target.value })}
               />
-          </div>
+            </div>
 
-          <div className="form-group col-sm-3">
-            <label htmlFor="username">Username</label>
-            <input
-              type="text"
-              className="form-control"
-              id="username"
-              value={credentials.username}
-              placeholder='Username'
-              onChange={(e) => setCredentials({ ...credentials, username: e.target.value })}
-            />
-          </div>
+            <div className="form-group col-sm-3 py-1">
+              <label htmlFor="firstName">First Name</label>
+              <input
+                type="text"
+                className="form-control"
+                id="firstName"
+                value={credentials.firstName}
+                placeholder='First Name'
+                onChange={(e) => setCredentials({ ...credentials, firstName: e.target.value })}
+              />
+            </div>
 
-          <div className="form-group col-sm-3">
-            <label htmlFor="firstName">First Name</label>
-            <input
-              type="text"
-              className="form-control"
-              id="firstName"
-              value={credentials.firstName}
-              placeholder='First Name'
-              onChange={(e) => setCredentials({ ...credentials, firstName: e.target.value })}
-            />
-          </div>
+            <div className="form-group col-sm-3 py-1">
+              <label htmlFor="lastName">Last Name</label>
+              <input
+                type="text"
+                className="form-control"
+                id="lastName"
+                value={credentials.lastName}
+                placeholder='Last Name'
+                onChange={(e) => setCredentials({ ...credentials, lastName: e.target.value })}
+              />
+            </div>
 
-          <div className="form-group col-sm-3">
-            <label htmlFor="lastName">Last Name</label>
-            <input
-              type="text"
-              className="form-control"
-              id="lastName"
-              value={credentials.lastName}
-              placeholder='Last Name'
-              onChange={(e) => setCredentials({ ...credentials, lastName: e.target.value })}
-            />
-          </div>
-
-          <div className="form-group col-sm-3">
-            <label htmlFor="role">Role</label>
-            <select
-              className="form-control"
-              id="role"
-              onChange={(e) => setCredentials({ ...credentials, role: e.target.value })}
-            >
-              <option value="USER">User</option>
-              <option value="ADMIN">Admin</option>
-            </select>
+            <div className="form-group col-sm-3 py-1">
+              <label htmlFor="role">Role</label>
+              <select
+                className="form-control"
+                id="role"
+                onChange={(e) => setCredentials({ ...credentials, role: e.target.value })}
+              >
+                <option value="USER">User</option>
+                <option value="ADMIN">Admin</option>
+                <option value="CRITIC">Critic</option>
+              </select>
+            </div>
           </div>
           <button className="btn btn-primary mb-4 mt-4 bg-success" 
             onClick={signup}><i className="fa-solid fa-user-plus"></i>  Create

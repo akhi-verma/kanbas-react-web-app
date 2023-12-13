@@ -7,7 +7,7 @@ h1 {
   
   /* Input Group */
   .input-group input {
-    background-color: lightblue; /* Light Pink */
+    background-color: rgb(199, 237, 249); /* Light Pink */
     color: #000; /* Black */
   }
   
@@ -23,6 +23,7 @@ h1 {
   .row {
     margin-right: 0px;
 }
-
-  
+.heading {
+  color: #17a2b8;
+  }
  

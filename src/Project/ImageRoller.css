@@ -1,0 +1,58 @@
+.slick-slider {
+    overflow: hidden;
+  }
+  
+  .items-container {
+    display: flex;
+    animation-duration: 40s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+  }
+  
+  .items-container.roll-LL {
+    animation-name: roll;
+  }
+  
+  .item {
+    flex: 1 0 auto;
+    margin: 20px;
+  }
+  
+  .company {
+    filter: grayscale(100%);
+    opacity: 0.5;
+    width: 100%;
+    object-fit: contain;
+    transition: filter 0.3s, opacity 0.3s;
+  }
+  
+  .company:hover {
+    filter: grayscale(0%);
+    opacity: 1;
+    cursor: pointer;
+  }
+  
+  @keyframes roll {
+    0% {
+      transform: translateX(97%); /* Start from the right edge */
+    }
+    100% {
+      transform: translateX(-80%); /* Roll to the left edge */
+    }
+  }
+  
+  .slick-prev,
+  .slick-next {
+    font-size: 24px;
+    color: #fff;
+  }
+  
+  .slick-prev:hover,
+  .slick-next:hover {
+    color: #ccc;
+  }
+
+  .item img {
+    width: 250px;
+    height: 250px;
+}

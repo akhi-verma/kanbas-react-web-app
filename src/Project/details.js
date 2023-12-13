@@ -1,17 +1,29 @@
 import React from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { Link, useParams, Navigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import * as client from './client';
 import * as userClient from './Users/client';
 import "./details.css";
 import { current } from '@reduxjs/toolkit';
 import * as likeClient from './Likes/client';
+import * as commentClient from './Comments/client';
+import StarRating from './StarRating'; 
 
 function Details() {
   const [currentUser, setCurrentUser] = useState(null);
   const [movie, setMovie] = useState(null);
   const { imdbID } = useParams();
   const [likes, setLikes] = useState([]);
+  const [comments, setComments] = useState([]);
+  const [rating, setRating] = useState(0);
+  const [comment, setComment] = useState('');
+
+  const commentMovie = async () => {
+    
+    const _comment = await commentClient.createUserComment(currentUser._id, imdbID, movie.Title, comment, rating);
+    setComment([_comment, ...comment]);
+    console.log(movie.Title)
+  }
 
   const fetchMovie = async () => {
     const movie = await client.findMovieById(imdbID);
@@ -42,17 +54,56 @@ function Details() {
     setLikes(likes);
   }
 
+  const unlikeMovie = async () => {
+    const _likes = await likeClient.deleteLike(currentUser._id, imdbID);
+    setLikes(likes.filter(like => like.user._id !== currentUser._id));
+}   
+ 
+    const fetchComments = async () => {
+        const comments = await commentClient.findCommentsForMovie(imdbID);
+        setComments(comments);
+    }
+
+    const deleteComment = async (comment) => {
+        const _comments = await commentClient.deleteComment(currentUser._id, comment._id);
+        setComments(comments.filter((_comment) => _comment.user._id !== currentUser._id));
+        console.log(movie.Title)
+    }
+
+    const handleRatingChange = (selectedRating) => {
+        setRating(selectedRating);
+        };
+    
+    const calculateAverageRating = () => {
+        if (comments.length === 0) {
+            return 0; // Return 0 if there are no reviews
+        }
+
+        const totalRating = comments.reduce((sum, comment) => sum + comment.rating, 0);
+        const averageRating = totalRating / comments.length;
+
+        return averageRating;
+        };
+
+
+
   useEffect(() => {
     fetchMovie();
     fetchUser();
     fetchLikes();
+    fetchComments();
   }, []);
 
   return (
     <div>
         {movie && (
-            <div className="container-fluid bg-dark text-light p-4">
-                <div className="row">
+            <div className="container-fluid bg-dark text-light p-4 top-container-fluid">
+               <Link to={`/Project/search`}>
+                    <button className="btn btn-info"> 
+                    <i className="fa-solid fa-arrow-left"></i> 
+                    </button>
+                    </Link>
+                <div className="row animate__animated animate__fadeIn">
                     <div className="col-sm-5 p-4">
                         <h1 className="text-primary">{movie.Title}</h1>
                         <b>Directed by: </b>{movie.Director}
@@ -118,6 +169,13 @@ function Details() {
                                 ))}
                             </ul>
                         </div>
+                        <div>
+                            <h2 className="section-title text-warning mt-5 ">Average Rating</h2>
+                            <div className="average-rating text-warning">
+                            <StarRating rating={calculateAverageRating()} />
+                                {calculateAverageRating().toFixed(1)}
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -129,13 +187,79 @@ function Details() {
                 </div>
                 {
                     currentUser && (
+                        <>
                         <button 
                           onClick={likeMovie}
-                          className="btn btn-primary mb-4">
-                            Like
+                          className="btn btn-warning mb-4 mx-2">
+                            <i class="fa-solid fa-thumbs-up"></i> Like
                         </button>
+                        <button 
+                          onClick={unlikeMovie}
+                          className="btn btn-danger mb-4 mx-2">
+                            <i class="fa-solid fa-thumbs-down"></i> Unlike
+                        </button>
+                        {
+                        currentUser && currentUser.role === "CRITIC" && (
+                            <div className="row">
+                                <div className='col-sm-4 text-light'>
+                                <textarea
+                                    className="form-control mb-4 mx-2"
+                                    placeholder="Comment"
+                                    value={comment}
+                                    onChange={(e) => setComment(e.target.value)}
+                                />
+                            
+                            <div>
+                                {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((star) => (
+                                <label key={star} className="star-label">
+                                    <input
+                                    type="radio"
+                                    name="rating"
+                                    value={star}
+                                    checked={rating === star}
+                                    onChange={() => handleRatingChange(star)}
+                                    />
+                                    <span className="star">&#9733;</span>
+                                </label>
+                                ))}
+                            </div>
+                            <button 
+                            onClick={commentMovie}
+                            className="btn btn-warning mb-4 mx-2 mt-4">
+                                <i class="fa-solid fa-comment"></i> Rate & Review
+                            </button>
+                            </div>
+                        </div>
+                )}
+                        </>
                     )
                 }
+                    <div className="col-sm-10 text-light">
+                        <h2>Reviews</h2>
+                        <ul className="list-group">
+                        {comments.map((commentResult, index) => (
+                            <li key={index} className="list-group-item border-0 bg-secondary text-white px-0 liked-by px-2">
+                            <div className="review-header">
+                                <Link to={`/Project/users/${commentResult.user._id}`} className="review-author float-start">
+                                @{commentResult.user.username}
+                                </Link>
+                                <span className="review-rating float-end ms-auto text-end">{<StarRating rating={commentResult.rating} />}</span>
+                                {currentUser && currentUser._id === commentResult.user._id && (
+                                    <button
+                                    className="btn btn-danger float-end float-end review-delete"
+                                    onClick={() => deleteComment(commentResult)}
+                                    >
+                                    <i class="fa-solid fa-trash"></i>
+                                    </button>
+                                )}
+                            </div>
+                            <p className="review-text">{commentResult.comment}</p>
+                            </li>
+                        ))}
+                        </ul>
+                    </div>
+
+
                 {/*<pre>
                     {JSON.stringify(movie, null, 2)}
                 </pre>*/}
