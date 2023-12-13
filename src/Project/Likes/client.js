@@ -4,7 +4,7 @@ const request = axios.create({
     withCredentials: true,
   });
 
-const API_BASE = "http://localhost:4000/api";
+const API_BASE = "https://project-jajx.onrender.com/api";
 
 const USERS_API_URL = `${API_BASE}/users`;
 const LIKES_API_URL = `${API_BASE}/likes`;

@@ -2,7 +2,7 @@ import axios from "axios";
 
 const client = axios.create({
     withCredentials: true,
-    baseURL: "http://localhost:4000/api/users",
+    baseURL: "https://project-jajx.onrender.com/api/users",
 });
 
 export const createUserFollows = async (followed) => {
